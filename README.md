@@ -12,6 +12,12 @@ This project focuses on **clean architecture, strict validation, and correctness
 
 ---
 
+## Screenshot
+
+<img width="1856" height="886" alt="image" src="https://github.com/user-attachments/assets/25886c30-ee20-4275-a89b-8b6823230001" />
+
+---
+
 ##  Features
 
 * ✅ Create, update, and delete tasks
@@ -248,12 +254,6 @@ VITE_API_URL=<Render Backend URL>/api
 * Real AI integration (OpenAI API)
 * Drag-and-drop task management
 * Filtering and search
-
----
-
-## Screenshot
-
-<img width="1856" height="886" alt="image" src="https://github.com/user-attachments/assets/25886c30-ee20-4275-a89b-8b6823230001" />
 
 ---
 
