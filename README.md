@@ -1,23 +1,21 @@
-# 🚀 Smart Task Manager (AI-Enhanced)
+#  Smart Task Manager (AI-Enhanced)
 
 A full-stack, production-ready task management application built using **Flask (backend)** and **React (frontend)**.
 This project focuses on **clean architecture, strict validation, and correctness**, along with a controlled **AI-based priority suggestion system**.
 
 ---
 
-## 🌐 Live Demo
+##  Live Demo
 
 * **Frontend (Vercel):** https://smart-task-manager-ai-rho.vercel.app
-* **Backend (Render):** *(Add your Render backend URL here)*
+* **Backend (Render):** https://smart-task-manager-ai.onrender.com
 
 ---
 
-## 📌 Features
+##  Features
 
 * ✅ Create, update, and delete tasks
-* ✅ Strict workflow enforcement:
-
-  * `TODO → IN_PROGRESS → DONE` (no skipping allowed)
+* ✅ Strict workflow enforcement: `TODO → IN_PROGRESS → DONE` (no skipping allowed)
 * ✅ AI-based priority suggestion (LOW, MEDIUM, HIGH)
 * ✅ Input validation (prevents invalid data)
 * ✅ Modular backend architecture
@@ -26,7 +24,7 @@ This project focuses on **clean architecture, strict validation, and correctness
 
 ---
 
-## 🧠 Key Highlights
+##  Key Highlights
 
 * Prevents invalid states (empty title, incorrect transitions)
 * Clean separation of concerns (routes, services, schemas, models)
@@ -36,7 +34,7 @@ This project focuses on **clean architecture, strict validation, and correctness
 
 ---
 
-## 🏗️ Architecture Overview
+##  Architecture Overview
 
 ### 🔹 Backend (Flask)
 
@@ -56,7 +54,7 @@ This project focuses on **clean architecture, strict validation, and correctness
 
 ---
 
-## ⚙️ Tech Stack
+##  Tech Stack
 
 ### Backend
 
@@ -79,7 +77,7 @@ This project focuses on **clean architecture, strict validation, and correctness
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```
 smart-task-manager-ai/
@@ -108,7 +106,7 @@ smart-task-manager-ai/
 
 ---
 
-## 🔐 Validation Rules
+##  Validation Rules
 
 * Task title cannot be empty
 * Invalid status transitions are not allowed
@@ -120,7 +118,7 @@ smart-task-manager-ai/
 
 ---
 
-## 🤖 AI Feature
+##  AI Feature
 
 * Suggests task priority based on description
 * Implemented as a controlled AI mock (`utils/ai.py`)
@@ -132,7 +130,7 @@ smart-task-manager-ai/
 
 ---
 
-## 🧪 Testing
+##  Testing
 
 Automated tests are implemented using **Pytest**.
 
@@ -153,7 +151,7 @@ pytest
 
 ---
 
-## ▶️ How to Run Locally
+##  How to Run Locally
 
 ### 🔹 Backend
 
@@ -184,7 +182,7 @@ http://localhost:5173
 
 ---
 
-## 🧪 How to Verify Functionality
+##  How to Verify Functionality
 
 1. Create a task
 2. Use description like **"urgent work"** → priority becomes HIGH
@@ -195,7 +193,7 @@ http://localhost:5173
 
 ---
 
-## ☁️ Deployment
+##  Deployment
 
 This project is deployed using modern cloud platforms:
 
@@ -204,8 +202,6 @@ This project is deployed using modern cloud platforms:
 * PostgreSQL cloud database
 * Persistent and production-ready
 * Connection via `DATABASE_URL`
-
----
 
 ### 🔹 Backend (Render)
 
@@ -225,8 +221,6 @@ Environment Variable:
 DATABASE_URL=<Neon PostgreSQL URL>
 ```
 
----
-
 ### 🔹 Frontend (Vercel)
 
 * React app deployed via Vercel
@@ -239,7 +233,7 @@ VITE_API_URL=<Render Backend URL>/api
 
 ---
 
-## ⚖️ Design Decisions
+##  Design Decisions
 
 * Used **SQLite** for local development simplicity
 * Switched to **PostgreSQL (Neon)** for production reliability
@@ -248,7 +242,7 @@ VITE_API_URL=<Render Backend URL>/api
 
 ---
 
-## 🚀 Future Improvements
+##  Future Improvements
 
 * User authentication
 * Real AI integration (OpenAI API)
@@ -257,15 +251,9 @@ VITE_API_URL=<Render Backend URL>/api
 
 ---
 
-## 🎥 Walkthrough
+##  Walkthrough
 
 *(Add your video link here)*
-
----
-
-## 📧 Submission
-
-Developed as part of an engineering assessment.
 
 ---
 
