@@ -1,11 +1,11 @@
-# 🚀 Smart Task Manager (AI-Enhanced)
+#  Smart Task Manager (AI-Enhanced)
 
 A full-stack task management application built with **Flask (backend)** and **React (frontend)**.
 This project focuses on **clean architecture, validation, and correctness**, along with a simple **AI-based priority suggestion system**.
 
 ---
 
-## 📌 Features
+##  Features
 
 * ✅ Create, update, and delete tasks
 * ✅ Task status workflow:
@@ -18,7 +18,7 @@ This project focuses on **clean architecture, validation, and correctness**, alo
 
 ---
 
-## 🧠 Key Highlights
+##  Key Highlights
 
 * Prevents invalid states (e.g., empty title, incorrect transitions)
 * Business logic separated from routes (service layer)
@@ -28,7 +28,7 @@ This project focuses on **clean architecture, validation, and correctness**, alo
 
 ---
 
-## 🏗️ Tech Stack
+##  Tech Stack
 
 ### Backend
 
@@ -50,7 +50,7 @@ This project focuses on **clean architecture, validation, and correctness**, alo
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```
 smart-task-manager/
@@ -78,7 +78,7 @@ smart-task-manager/
 
 ---
 
-## ⚙️ Setup Instructions
+##  Setup Instructions
 
 ### 🔹 1. Clone Repository
 
@@ -123,7 +123,7 @@ http://localhost:5173
 
 ---
 
-## 🧪 Running Tests
+##  Running Tests
 
 ```
 cd backend
@@ -132,7 +132,7 @@ pytest
 
 ---
 
-## 🤖 AI Feature
+##  AI Feature
 
 * Suggests task priority based on description
 * Controlled and validated before saving
@@ -141,7 +141,7 @@ pytest
 
 ---
 
-## 🔐 Validation Rules
+##  Validation Rules
 
 * Task title cannot be empty
 * Invalid status transitions are not allowed
@@ -153,7 +153,7 @@ pytest
 
 ---
 
-## ⚖️ Design Decisions
+##  Design Decisions
 
 * Used **SQLite** for simplicity during development
 * Structured backend for easy migration to PostgreSQL
@@ -162,7 +162,7 @@ pytest
 
 ---
 
-## 🚀 Future Improvements
+##  Future Improvements
 
 * User authentication
 * Real AI integration (OpenAI/LLM APIs)
@@ -171,18 +171,12 @@ pytest
 
 ---
 
-## 🎥 Walkthrough
+##  Walkthrough
 
 (Add your video link here)
 
 ---
 
-## 📧 Submission
-
-Developed as part of an engineering assessment.
-
----
-
-## 👩‍💻 Author
+##  Author
 
 Ankita Gupta
