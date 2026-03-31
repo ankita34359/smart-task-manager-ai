@@ -14,6 +14,7 @@ def create_app(config_name='development'):
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
     from models import db
+    import models.task  # Import models before create_all
     db.init_app(app)
 
     with app.app_context():
