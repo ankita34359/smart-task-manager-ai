@@ -1,113 +1,188 @@
-# Smart Task Manager
+# 🚀 Smart Task Manager (AI-Enhanced)
 
-A production-quality full-stack web application designed to demonstrate clean architecture, robust data validation, and AI-driven workflow features.
-
-## Project Overview
-
-Smart Task Manager allows users to organize their tasks on a Kanban-style board with strict workflow transitions (`TODO` ➔ `IN_PROGRESS` ➔ `DONE`). It features a Python Flask backend ensuring rigid data validation, and a modern React frontend utilizing glassmorphism and smooth animations.
-
-### Key Features
-- **Strict Status Transitions:** Tasks cannot skip workflow stages, and cannot go backwards.
-- **Robust Validation:** Implemented using Marshmallow against empty strings, invalid statuses, and past due dates.
-- **Duplicate Prevention:** The backend checks for tasks with duplicating titles to keep the board clean.
-- **AI Priority Suggestion:** Automatically suggests a priority (`LOW`, `MEDIUM`, `HIGH`) based on task descriptions. Includes a safe fallback so the main system never throws errors during ingestion.
+A full-stack task management application built with **Flask (backend)** and **React (frontend)**.
+This project focuses on **clean architecture, validation, and correctness**, along with a simple **AI-based priority suggestion system**.
 
 ---
 
-## Architecture & Technology Stack
+## 📌 Features
+
+* ✅ Create, update, and delete tasks
+* ✅ Task status workflow:
+  **TODO → IN_PROGRESS → DONE** (no skipping allowed)
+* ✅ AI-based priority suggestion (LOW, MEDIUM, HIGH)
+* ✅ Input validation (prevents invalid data)
+* ✅ Clean modular backend architecture
+* ✅ RESTful API integration
+* ✅ Automated tests using Pytest
+
+---
+
+## 🧠 Key Highlights
+
+* Prevents invalid states (e.g., empty title, incorrect transitions)
+* Business logic separated from routes (service layer)
+* Schema-based validation using Marshmallow
+* AI feature is optional and safe (fallback supported)
+* Designed for maintainability and scalability
+
+---
+
+## 🏗️ Tech Stack
 
 ### Backend
-- **Framework:** Python (Flask)
-- **Database:** SQLite (development safe, via SQLAlchemy)
-- **Validation:** Marshmallow Schema validation
-- **Testing:** Pytest & pytest-flask
-- **Design Pattern:** Clean Architecture with separate layers:
-  - `routes/`: Handles HTTP requests and responses.
-  - `services/`: Contains core business logic and state transition rules.
-  - `schemas/`: Exclusively handles validation of DTOs.
-  - `models/`: SQLAlchemy database definitions.
+
+* Python (Flask)
+* SQLAlchemy
+* Marshmallow
+* Pytest
 
 ### Frontend
-- **Framework:** React + Vite
-- **Styling:** Vanilla CSS with variables and modern glassmorphism (no Tailwind required).
-- **Icons:** `lucide-react`
-- **Network:** Axios for clean API queries.
+
+* React (Vite)
+* Axios
+* CSS
+
+### Database
+
+* SQLite (for development)
+* PostgreSQL (can be used in production)
 
 ---
 
-## AI Integration Explanation
+## 📂 Project Structure
 
-(Ref: `ai_guidelines.md` for extended details)
-
-The AI suggestion utility is located at `backend/utils/ai.py`. It serves to parse incoming Task descriptions to suggest a valid priority tier. The feature is built to be **resilient**:
-1. It validates output ensuring it matches strictly `LOW`, `MEDIUM`, or `HIGH`.
-2. It catches internal exceptions perfectly so core HTTP response flow is never blocked.
-3. It has a fallback implementation using heuristic keywords (`urgent`, `soon`) allowing the project to run safely strictly offline without external LLM provider costs.
+```
+smart-task-manager/
+│
+├── backend/
+│   ├── models/
+│   ├── routes/
+│   ├── services/
+│   ├── schemas/
+│   ├── utils/
+│   ├── tests/
+│   ├── app.py
+│   └── requirements.txt
+│
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── services/
+│   │   └── hooks/
+│
+├── README.md
+└── ai_guidelines.md
+```
 
 ---
 
-## Setup Steps
+## ⚙️ Setup Instructions
 
-### 1. Backend Setup
+### 🔹 1. Clone Repository
 
-```bash
+```
+git clone https://github.com/your-username/smart-task-manager-ai.git
+cd smart-task-manager-ai
+```
+
+---
+
+### 🔹 2. Backend Setup
+
+```
 cd backend
 python -m venv venv
-
-# On Windows:
-.\venv\Scripts\Activate.ps1
-# On Mac/Linux:
-# source venv/bin/activate
+venv\Scripts\activate   # For Windows
 
 pip install -r requirements.txt
 ```
 
-Run backend tests:
-```bash
-pytest
-```
+Run backend:
 
-Run the API Server:
-```bash
+```
 python app.py
 ```
-*The API will start on `http://localhost:5000`.*
 
-### 2. Frontend Setup
+---
 
-In a new terminal:
-```bash
+### 🔹 3. Frontend Setup
+
+```
 cd frontend
 npm install
 npm run dev
 ```
-*The app will launch, typically accessible at `http://localhost:5173`.*
+
+Open in browser:
+
+```
+http://localhost:5173
+```
 
 ---
 
-## API Documentation
+## 🧪 Running Tests
 
-### `POST /api/tasks`
-Create a new task.
-- **Body:** `{ "title": "...", "description": "..." }`
-- **Returns:** HTTP 201 with Task object.
-
-### `GET /api/tasks`
-Fetch all tasks.
-- **Returns:** HTTP 200 with list of Task objects.
-
-### `PUT /api/tasks/<id>`
-Update status or details of a task. Validation enforces `TODO` ➔ `IN_PROGRESS` ➔ `DONE` transitions.
-- **Body:** `{ "status": "IN_PROGRESS" }`
-- **Returns:** HTTP 200 with Updated Task object.
-
-### `DELETE /api/tasks/<id>`
-Remove a task entirely.
-- **Returns:** HTTP 200 `{ "message": "Success" }`
+```
+cd backend
+pytest
+```
 
 ---
 
-## Tradeoffs and Design Decisions
-- **Vanilla CSS:** I chose pure CSS Variables and modular naming to achieve a beautiful frosted-glass layout without importing Tailwind. This keeps the frontend incredibly lightweight.
-- **SQLite Database:** Used for zero-friction local development, but wrapped cleanly behind SQLAlchemy so swapping to `PostgreSQL` in production is a 1-line change to `DATABASE_URL`.
-- **Mock AI Implementation:** Instead of embedding an expensive `openai` or `gemini` call that could break during assessment if API keys run empty, I provided a robust heuristic mock. The Service architecture natively supports swapping this exact function out with a real API call whenever necessary, demonstrating architectural safety over brittle integrations.
+## 🤖 AI Feature
+
+* Suggests task priority based on description
+* Controlled and validated before saving
+* Includes fallback logic if AI fails
+* Does not affect core system functionality
+
+---
+
+## 🔐 Validation Rules
+
+* Task title cannot be empty
+* Invalid status transitions are not allowed
+* Only allowed statuses:
+
+  * TODO
+  * IN_PROGRESS
+  * DONE
+
+---
+
+## ⚖️ Design Decisions
+
+* Used **SQLite** for simplicity during development
+* Structured backend for easy migration to PostgreSQL
+* Prioritized **clean code and correctness over complexity**
+* AI feature implemented safely without dependency
+
+---
+
+## 🚀 Future Improvements
+
+* User authentication
+* Real AI integration (OpenAI/LLM APIs)
+* Drag-and-drop UI
+* Task filtering and search
+
+---
+
+## 🎥 Walkthrough
+
+(Add your video link here)
+
+---
+
+## 📧 Submission
+
+Developed as part of an engineering assessment.
+
+---
+
+## 👩‍💻 Author
+
+Ankita Gupta
