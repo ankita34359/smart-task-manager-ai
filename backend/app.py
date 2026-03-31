@@ -16,6 +16,9 @@ def create_app(config_name='development'):
     from models import db
     db.init_app(app)
 
+    with app.app_context():
+        db.create_all()
+
     from routes.task_routes import task_bp
     app.register_blueprint(task_bp, url_prefix='/api/tasks')
 
