@@ -259,7 +259,7 @@ VITE_API_URL=<Render Backend URL>/api
 
 ##  Walkthrough
 
-*https://youtu.be/IvT9OJDE9KY*
+*https://youtu.be/pdO7OKs8QRw?si=z8TEB_nqVfRdACyA*
 
 ---
 
