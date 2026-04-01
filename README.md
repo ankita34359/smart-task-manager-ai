@@ -263,6 +263,6 @@ VITE_API_URL=<Render Backend URL>/api
 
 ---
 
-## 👩‍💻 Author
+##  Author
 
 **Ankita Gupta**
