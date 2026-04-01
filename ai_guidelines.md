@@ -1,19 +1,47 @@
-# AI Integration Guidelines
+#  AI Guidelines – Smart Task Manager
 
-## How AI is Used
-The Smart Task Manager uses AI to automatically suggest task priorities (`LOW`, `MEDIUM`, `HIGH`) based on the natural language description provided by the user. This reduces cognitive load when planning tasks.
+##  How I Used AI
 
-## Prompt Design
-*(If integrated with an LLM like Gemini or OpenAI)*
-System Prompt: "You are a task prioritization assistant. Read the following task description and output ONLY one of the following words based on urgency and importance: LOW, MEDIUM, HIGH."
+I used AI tools like Claude and Antigravity to help in building this project.
 
-## Constraints and Risks
-- **Hallucination Risk:** The AI might return an invalid priority string.
-- **Latency Risk:** Calling an external API can be slow or time out.
-- **Cost Risk:** High volume of task creations could spike API costs.
+AI helped me in:
 
-## Validation Strategy & Fallback
-To ensure the system remains robust:
-1. **Input Validation:** The AI response is evaluated and assigned ONLY if it matches strict enums (`["LOW", "MEDIUM", "HIGH"]`).
-2. **Fallback Mechanism:** If the AI call fails, times out, or returns an invalid string, the system safely catches the exception and falls back to saving the task with `LOW` priority instead of breaking the flow.
-3. **Mock Implementation:** Currently, to demonstrate the architecture without external dependencies, a safe mock (`backend/utils/ai.py`) uses heuristic keyword matching ('urgent', 'soon'). This ensures the core application never breaks while simulating the AI integration.
+* Creating project structure (backend and frontend)
+* Generating initial code for APIs and components
+* Suggesting improvements and fixes
+
+I did not use AI blindly. I reviewed all the code, tested it, and made changes where needed.
+
+---
+
+##  How I Controlled AI
+
+* I ensured all validation rules are properly implemented
+* I kept business logic separate from routes
+* I avoided complex or unclear code
+* I verified all outputs manually
+
+---
+
+##  AI Feature in This Project
+
+This project includes a simple AI-based priority suggestion.
+
+* If description contains "urgent" → HIGH
+* If description contains "important" → MEDIUM
+* Otherwise → LOW
+
+### Safety:
+
+* Output is limited to LOW, MEDIUM, HIGH only
+* Fallback is implemented if AI fails
+* The system works even without AI
+
+---
+
+##  Key Point
+
+AI was used only as a helper.
+All final decisions and validations were handled by me.
+
+---
